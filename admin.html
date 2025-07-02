@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Logo_PT_Kereta_Api_Indonesia_%28Persero%29_2020.svg/2560px-Logo_PT_Kereta_Api_Indonesia_%28Persero%29_2020.svg.png" alt="Logo KAI" class="logo-header">
+            <nav>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Dashboard Admin</h2>
+        
+        <div class="card">
+            <h3>📢 Buat Pengumuman (via Telegram)</h3>
+            <form id="announcementForm">
+                <div class="input-group">
+                    <textarea id="pengumuman" placeholder="Tulis pengumuman..." rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim Pengumuman</button>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h3>📊 Rekapan Absensi Peserta</h3>
+            <div class="table-container">
+                <table id="tabel-absensi">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Tanggal</th>
+                            <th>Dinas</th>
+                            <th>Status</th>
+                            <th>Waktu Absen</th>
+                            <th>Keterangan</th>
+                            <th>Lokasi</th>
+                            <th>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <button id="exportPdfBtn" class="btn btn-secondary">Export ke PDF</button>
+        </div>
+
+        <div class="card">
+            <h3>📖 Rekapan Logbook Harian</h3>
+             <div class="table-container">
+                <table id="tabel-logbook">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Tanggal</th>
+                            <th>Aktivitas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

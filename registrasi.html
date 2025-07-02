@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Absensi Magang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container login-container">
+        <div class="login-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Logo_PT_Kereta_Api_Indonesia_%28Persero%29_2020.svg/2560px-Logo_PT_Kereta_Api_Indonesia_%28Persero%29_2020.svg.png" alt="Logo KAI" class="logo">
+            <h2>Registrasi Peserta</h2>
+            <p>Isi data diri untuk membuat akun</p>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="nama" required placeholder="Nama Lengkap">
+                </div>
+                 <div class="input-group">
+                    <input type="text" id="nim" required placeholder="NIM / No. Induk">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Registrasi</button>
+                 <p class="auth-link">Sudah punya akun? <a href="index.html">Login di sini</a></p>
+            </form>
+        </div>
+    </div>
+    <div id="notification" class="notification"></div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

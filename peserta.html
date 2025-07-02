@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Peserta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Logo_PT_Kereta_Api_Indonesia_%28Persero%29_2020.svg/2560px-Logo_PT_Kereta_Api_Indonesia_%28Persero%29_2020.svg.png" alt="Logo KAI" class="logo-header">
+            <nav>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="user-info" class="card">
+            <h3>Data Diri</h3>
+            <p><strong>Nama:</strong> <span id="nama-peserta"></span></p>
+            <p><strong>NIM:</strong> <span id="nim-peserta"></span></p>
+            <p><strong>Email:</strong> <span id="email-peserta"></span></p>
+        </div>
+
+        <div id="absensi" class="card">
+            <h3>📝 Absensi Hari Ini</h3>
+            <form id="absensiForm">
+                <div class="input-group">
+                    <label for="status">Status Kehadiran</label>
+                    <select id="status" required>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Sakit">Sakit</option>
+                        <option value="Izin">Izin</option>
+                        <option value="Libur">Libur</option>
+                    </select>
+                </div>
+                 <div class="input-group">
+                    <label for="dinas">Pilih Dinas</label>
+                    <select id="dinas" required>
+                        <option value="Pagi">Dinas Pagi (06:00-14:00)</option>
+                        <option value="Siang">Dinas Siang (14:00-22:00)</option>
+                        <option value="Malam">Dinas Malam (22:00-06:00)</option>
+                    </select>
+                </div>
+                 <div class="input-group">
+                    <label for="dokumentasi">Foto Dokumentasi</label>
+                    <input type="file" id="dokumentasi" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Absen</button>
+            </form>
+        </div>
+
+        <div id="logbook" class="card">
+            <h3>📓 Logbook Aktivitas Harian</h3>
+            <form id="logbookForm">
+                <div class="input-group">
+                    <textarea id="aktivitas" placeholder="Tuliskan aktivitas harian Anda di sini..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Logbook</button>
+            </form>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
